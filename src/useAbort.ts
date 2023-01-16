@@ -21,7 +21,6 @@ const useAbort = (keyword: string): IUseAbort => {
           `https://swapi.dev/api/people?search=${keyword}`,
           { signal: abortController.signal }
         ).then((res) => res.json());
-
         setIsLoading(false);
         setData(response.results);
       } catch (error: any) {
